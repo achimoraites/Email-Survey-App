@@ -10,4 +10,8 @@ module.exports = app => {
         successRedirect: '/profile',
         failureRedirect: '/fail'
     }));
+
+    app.get('/api/current_user',(req, res)=>{
+        res.send(req.user);
+    });
 };
