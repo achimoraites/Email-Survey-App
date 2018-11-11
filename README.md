@@ -5,3 +5,6 @@ MERN stack application , some features:
 - Cookie based
 - Heroku ready
 - Mongo DB on the cloud
+
+
+<img src='preview.png' alt='emaily screenshot' />
