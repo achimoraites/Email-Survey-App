@@ -1,4 +1,4 @@
-import { FETCH_USER, LOG_OUT } from '../actions/types';
+import { FETCH_USER, LOG_OUT } from '../actions/auth/actionTypes';
 
 export default function(state = null, action){
     switch(action.type){
