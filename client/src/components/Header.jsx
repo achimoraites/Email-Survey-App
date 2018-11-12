@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/index';
 import { Link } from 'react-router-dom';
-
+import Payments from './Payments';
 
 
 class Header extends Component{
@@ -19,7 +19,10 @@ class Header extends Component{
         case false:
           return <li><a href="/auth/google">Login with Google</a></li>;
         default:
-          return <li onClick={()=>this.logout()}><Link to={'/'} style={{color: '#fff'}} >Log out {this.props.auth.firstName}?</Link></li>;
+          return [
+            <li key={2}><Payments /></li>,  
+            <li key={1} onClick={()=>this.logout()}><Link to={'/'} style={{color: '#fff'}} >Log out {this.props.auth.firstName}?</Link></li>
+        ];
       }
     }
 
