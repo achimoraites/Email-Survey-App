@@ -15,10 +15,18 @@ class Payments extends Component{
             token = {token => this.props.handleToken(token)}
             stripeKey = {process.env.REACT_APP_STRIPE_KEY}
             >
-            <button className="btn btn-credits">Add Credits</button>
+            <button className="btn btn-credits">Add Credits : {this.props.auth.credits}</button>
             </StripeCheckout>
         )
     }
 }
 
-export default connect(null,{handleToken})(Payments);
+function mapStateToProps({auth}){
+ console.log('auth',auth);
+  return {
+    auth
+  }
+  
+}
+
+export default connect(mapStateToProps,{handleToken})(Payments);
