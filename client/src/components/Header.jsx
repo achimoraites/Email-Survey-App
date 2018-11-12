@@ -6,8 +6,9 @@ class Header extends Component{
 
 
   logout(){
-    console.log('logout');
+    console.log('logout',this.props);
     this.props.logoutUser();
+    
   }
 
     renderContent(){
@@ -17,7 +18,7 @@ class Header extends Component{
         case false:
           return <li><a href="/auth/google">Login with Google</a></li>;
         default:
-          return <li onClick={()=>this.logout()}><button>Log out</button></li>;
+          return <li onClick={()=>this.logout()}><a>Log out</a></li>;
       }
     }
 

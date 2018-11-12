@@ -6,8 +6,7 @@ export default function(state = null, action){
         case FETCH_USER:
         return action.payload || false;
         case LOG_OUT:
-        // if logout is true return that the auth is now false
-        return action.payload ? false : state;
+        return false;
         default:
           return state;
     }
