@@ -4,7 +4,6 @@ import { fetchUserAction, logoutAction} from './auth'
 
 export const fetchUser = () => async dispatch => {
     const res = await axios.get('/api/current_user');
-    console.log(res.data);
     dispatch(fetchUserAction(res.data));
 };
 
@@ -14,5 +13,4 @@ export const logoutUser = () => async dispatch => {
     if (status === 200) {
         dispatch(logoutAction());
     }
-
 };
