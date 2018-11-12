@@ -18,7 +18,7 @@ class Header extends Component{
         case false:
           return <li><a href="/auth/google">Login with Google</a></li>;
         default:
-          return <li onClick={()=>this.logout()}><a>Log out</a></li>;
+          return <li onClick={()=>this.logout()}><a style={{color: '#fff'}} className="btn-flat btn-large">Log out</a></li>;
       }
     }
 
