@@ -7,5 +7,8 @@ MERN stack application , some features:
 - Mongo DB on the cloud
 - Payments with Stripe
 
+### Logged in
 <img src='loggedIn.png' alt='emaily logged in' />
+
+### Not logged in
 <img src='preview.png' alt='emaily screenshot' />
