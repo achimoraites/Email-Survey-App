@@ -14,3 +14,8 @@ export const logoutUser = () => async dispatch => {
         dispatch(logoutAction());
     }
 };
+
+export const handleToken = token => async dispatch => {
+    const res = await axios.post('/api/stripe',token);
+    dispatch(fetchUserAction(res.data));
+};
