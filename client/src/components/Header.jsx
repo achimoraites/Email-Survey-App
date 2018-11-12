@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { logoutUser } from '../actions/index';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,7 +27,7 @@ class Header extends Component{
         return(
             <nav>
             <div className="nav-wrapper">
-              <a href="/" className="brand-logo">Emaily</a>
+              <Link to="/" className="brand-logo">Emaily</Link>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 { this.renderContent() }
               </ul>
