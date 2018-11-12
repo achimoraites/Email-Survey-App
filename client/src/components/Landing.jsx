@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
-class Landing{
+
+class Landing extends Component{
 
     render(){
         return (
-            <div>
-                <h2>Landing</h2>
+            <div className="landing" style={{textAlign: "center"}}>
+                <h2>Emaily</h2>
+
+                <div>
+                    <p>Collect feedback fast about your project!</p>
+                </div>
             </div>
         )
     }
