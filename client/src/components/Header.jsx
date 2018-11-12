@@ -6,9 +6,7 @@ class Header extends Component{
 
 
   logout(){
-    console.log('logout',this.props);
-    this.props.logoutUser();
-    
+    this.props.logoutUser(); 
   }
 
     renderContent(){
@@ -18,7 +16,7 @@ class Header extends Component{
         case false:
           return <li><a href="/auth/google">Login with Google</a></li>;
         default:
-          return <li onClick={()=>this.logout()}><a style={{color: '#fff'}} className="btn-flat btn-large">Log out</a></li>;
+          return <li onClick={()=>this.logout()}><button style={{color: '#fff'}} className="btn-flat btn-large">Log out </button></li>;
       }
     }
 
@@ -37,7 +35,7 @@ class Header extends Component{
 }
 
 function mapStateToProps({auth}){
-  console.log('auth',auth);
+  // console.log('auth',auth);
   return {
     auth
   }
