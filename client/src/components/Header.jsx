@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { logoutUser } from '../actions/index';
 
 class Header extends Component{
+
+
+  logout(){
+    console.log('logout',this.props);
+    this.props.logoutUser();
+    
+  }
 
     renderContent(){
       switch(this.props.auth){
@@ -10,7 +18,7 @@ class Header extends Component{
         case false:
           return <li><a href="/auth/google">Login with Google</a></li>;
         default:
-          return <li><a href="/api/logout">Log out</a></li>;
+          return <li onClick={()=>this.logout()}><a>Log out</a></li>;
       }
     }
 
@@ -35,4 +43,4 @@ function mapStateToProps({auth}){
   }
 }
 
-export default connect(mapStateToProps,null)(Header);
+export default connect(mapStateToProps,{logoutUser})(Header);
