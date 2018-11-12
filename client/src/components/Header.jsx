@@ -20,8 +20,9 @@ class Header extends Component{
           return <li><a href="/auth/google">Login with Google</a></li>;
         default:
           return [
-            <li key={2}><Payments /></li>,  
-            <li key={1} onClick={()=>this.logout()}><Link to={'/'} style={{color: '#fff'}} >Log out {this.props.auth.firstName}?</Link></li>
+            <li key={1}><Payments /></li>,
+            <li key={2}>Credits :  {this.props.auth.credits}</li>,  
+            <li key={3} onClick={()=>this.logout()}><Link to={'/'} style={{color: '#fff'}} >Log out {this.props.auth.firstName}?</Link></li>
         ];
       }
     }
@@ -31,8 +32,8 @@ class Header extends Component{
             <nav>
             <div className="nav-wrapper">
               <Link to={this.props.auth ? '/surveys' : '/'} 
-              className="brand-logo">Emaily</Link>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
+              className="brand-logo left">Emaily</Link>
+              <ul id="nav-mobile" className="right">
                 { this.renderContent() }
               </ul>
             </div>
