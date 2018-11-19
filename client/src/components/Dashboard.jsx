@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
 
@@ -16,8 +17,8 @@ class Dashboard extends Component {
           I am convenient because I require little markup to use effectively.</p>
                             </div>
                             <div className="card-action">
-                                <a href="#">This is a link</a>
-                                <a href="#">This is a link</a>
+                                <Link to={'/surveys'}>This is a link</Link>
+                                <Link to={'/surveys'}>This is a link</Link>
                             </div>
                         </div>
                     </div>
@@ -33,7 +34,7 @@ class Dashboard extends Component {
                                     <p>I am a very simple card. I am good at containing small bits of information.</p>
                                 </div>
                                 <div className="card-action">
-                                    <a href="#">This is a link</a>
+                                    <Link to={'/surveys'}>This is a link</Link>
                                 </div>
                             </div>
                         </div>
