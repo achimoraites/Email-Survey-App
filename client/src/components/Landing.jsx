@@ -7,13 +7,13 @@ class Landing extends Component {
         return (
             <div className="landing">
                 <div className="section no-pad-bot" id="index-banner">
-                    <div class="container">
+                    <div className="container">
                         <h1 style={{color: '#4ed9d2'}} className="header center">Emaily</h1>
                         <div className="row center">
-                            <h5 class="header col s12 light">Get faster feedback from your customers</h5>
+                            <h5 className="header col s12 light">Get faster feedback from your customers</h5>
                         </div>
                         <div className="row center">
-                            <a style={{backgroundColor:'#2aa538'}} href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light">Get Started</a>
+                            <a style={{backgroundColor:'#2aa538'}} href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light">Get Started</a>
                         </div>
 
                     </div>
