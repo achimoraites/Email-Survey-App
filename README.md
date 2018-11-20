@@ -6,6 +6,7 @@ MERN stack application , some features:
 - Heroku ready
 - Mongo DB on the cloud
 - Payments with Stripe
+- Sends emails with sendgrid API
 
 ### Logged in
 <img src='loggedIn.png' alt='emaily logged in' />

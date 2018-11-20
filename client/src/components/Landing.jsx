@@ -15,7 +15,6 @@ class Landing extends Component {
                         <div className="row center">
                             <a style={{backgroundColor:'#2aa538'}} href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light">Get Started</a>
                         </div>
-
                     </div>
                 </div>
 
