@@ -1,3 +1,26 @@
 module.exports = ({body}) => {
-    return `<div>${body}</div>`;
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+    </head>
+    <body>
+        <div style="text-align: center">
+            <h3>I'd like your input!</h3>
+            <p>${body}</p>
+            <div>
+                <a href="http://localhost:3000">Yes</a>
+            </div>
+            <div>
+                <a href="http://localhost:3000">No</a>
+            </div>
+        </div>
+    </body>
+    </html>
+    
+    `;
 }
