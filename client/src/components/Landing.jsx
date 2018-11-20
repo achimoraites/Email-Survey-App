@@ -19,7 +19,7 @@ class Landing extends Component {
                     </div>
                 </div>
 
-                <div className="container">
+                <div style={{width: '95%'}} className="container">
             <div className="section">
               <div className="row">
                 <div className="col s12 m4">
