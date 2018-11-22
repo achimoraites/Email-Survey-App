@@ -37,6 +37,20 @@ class SurveyForm extends Component {
 
 }
 
+// if errors is empty it's valid
+function validate(values) {
+    const errors = {};
+
+    _.each(FIELDS, ({ name }) =>{
+        if (!values[name]) {
+            errors[name] = `${name} cannot be empty !`;
+        }
+    })
+
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'surveyForm'
 })(SurveyForm);
