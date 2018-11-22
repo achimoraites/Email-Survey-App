@@ -5,8 +5,7 @@ import SurveyForm from './SurveyForm';
 class SurveyNew extends Component {
     render() {
         return(
-            <div>
-                SurveyNew
+            <div style={{margin: '3em auto'}}>
                 <SurveyForm />
             </div>
         )
