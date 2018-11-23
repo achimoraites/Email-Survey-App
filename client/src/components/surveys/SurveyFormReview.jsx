@@ -32,7 +32,7 @@ const SurveyFormReview = ({ onCancel, formValues }) => {
             onClick={onCancel}><i className="material-icons left" >arrow_back</i> Back</button>
             <button 
             className="blue darken-3 btn-flat right white-text"
-            onClick={onCancel}><i className="material-icons white-text left" >done</i> Done</button>
+            onClick={onCancel}><i className="material-icons white-text left" >send</i> Send</button>
         </div>
         
     )
