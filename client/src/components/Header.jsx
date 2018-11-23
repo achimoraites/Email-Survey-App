@@ -32,6 +32,7 @@ class Header extends Component{
             <nav>
             <div className="nav-wrapper">
               <Link to={this.props.auth ? '/surveys' : '/'} 
+              style={{margin: '0 0.2em'}}
               className="brand-logo left"><i style={{fontSize: '1.3em', color: '#60c4ec'}} className="material-icons left" >mail_outline</i></Link>
               <ul id="nav-mobile" className="right">
                 { this.renderContent() }

@@ -10,10 +10,10 @@ class Landing extends Component {
                     <div className="container">
                         <h1 style={{color: '#4ed9d2'}} className="header center">Emaily</h1>
                         <div className="row center">
-                            <h5 className="header col s12 light">Get faster feedback from your customers</h5>
+                            <h5 className="header col s12 light"> Get faster feedback from your customers , by bombarding their inbox with questions</h5>
                         </div>
                         <div className="row center">
-                            <a style={{backgroundColor:'#2aa538'}} href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light">Get Started</a>
+                            <a style={{backgroundColor:'#2aa538'}} href="/auth/google" id="download-button" className="btn-large waves-effect waves-light">Join US</a>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,10 @@ class Landing extends Component {
                   <div className="icon-block center">
                   <i className="medium material-icons">blur_on</i>
                     <h5 className="center">Easy Data Collection</h5>
-                    <p className="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                    <p className="light">We collect all the 
+                     information you need for a successful survey.
+                    </p>
+                    
                   </div>
                 </div>
         
@@ -33,7 +36,7 @@ class Landing extends Component {
                   <div className="icon-block center">
                   <i className="medium material-icons">assessment</i>
                     <h5 className="center">User Experience Focused</h5>
-                    <p className="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                    <p className="light">Our dedicated team of 'zombie' scientists have  researched the best ways to trap your audience!</p>
                   </div>
                 </div>
         
@@ -41,7 +44,7 @@ class Landing extends Component {
                   <div className="icon-block center">
                   <i className="medium material-icons">mood</i>
                     <h5 className="center">Easy to work with</h5>      
-                    <p className="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                    <p className="light">You are just a click away from <del>wasting your money</del> your next successful survey!</p>
                   </div>
                 </div>
               </div>
