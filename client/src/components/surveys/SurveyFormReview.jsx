@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
-import FIELDS from '../../utils/fields';
+import FIELDS from './fields';
 import * as actions from '../../actions/surveys';
 
 const SurveyFormReview = ({ onCancel, formValues, sendSurvey, history }) => {
@@ -43,7 +43,7 @@ const SurveyFormReview = ({ onCancel, formValues, sendSurvey, history }) => {
 
 function mapStateToProps(state) {
     const {form: {surveyForm: {values} }} = state;
-    console.log('values :: ',values)
+    // console.log('values :: ',values)
     return {
         formValues: values
     }

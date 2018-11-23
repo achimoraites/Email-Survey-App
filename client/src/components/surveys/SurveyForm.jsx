@@ -5,7 +5,7 @@ import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import SurveyField from './SurveyField';
 import validateEmails from  '../../utils/validateEmails';
-import FIELDS from '../../utils/fields';
+import FIELDS from './fields';
 
 
 
