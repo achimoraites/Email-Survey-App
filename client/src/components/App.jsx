@@ -7,7 +7,6 @@ import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
-// const Dashboard = () => <h2>Dashboard</h2>;
 
 
 
