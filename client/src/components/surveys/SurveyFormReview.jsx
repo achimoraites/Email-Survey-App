@@ -1,14 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 import FIELDS from '../../utils/fields';
+import * as actions from '../../actions/surveys';
 
-const SurveyFormReview = ({ onCancel, formValues }) => {
+const SurveyFormReview = ({ onCancel, formValues, sendSurvey, history }) => {
 
-    const reviewFields = _.map(FIELDS, field => {
-        return  <div style={{marginBottom: '1em'}} key={field.name}>
-                    <label style={{fontSize: '1.3em', color: '#fff'}}>{field.label}</label>
-                    <div>{formValues[field.name]}</div>
+    const reviewFields = _.map(FIELDS, ({name, label}) => {
+        return  <div style={{marginBottom: '1em'}} key={name}>
+                    <label style={{fontSize: '1.3em', color: '#fff'}}>{label}</label>
+                    <div>{formValues[name]}</div>
                 </div>;
     });
 
@@ -28,11 +30,11 @@ const SurveyFormReview = ({ onCancel, formValues }) => {
             </div>
 
             <button 
-            className="yellow darken-3 btn-flat"
+            className="yellow darken-3 btn-flat white-text"
             onClick={onCancel}><i className="material-icons left" >arrow_back</i> Back</button>
             <button 
             className="blue darken-3 btn-flat right white-text"
-            onClick={onCancel}><i className="material-icons white-text left" >send</i> Send</button>
+            onClick={()=> sendSurvey(formValues, history)}><i className="material-icons white-text right" >send</i> Send Survey</button>
         </div>
         
     )
@@ -47,4 +49,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(SurveyFormReview);
+export default connect(mapStateToProps,actions)(withRouter(SurveyFormReview));
