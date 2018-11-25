@@ -27,7 +27,7 @@ module.exports = app =>{
             }
         })
         .compact()
-        .uniqBy('email', 'surveyId')
+        .uniqWith(_.isEqual)
         .value();
         console.log(events);
         res.send({});
