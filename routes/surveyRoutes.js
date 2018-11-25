@@ -17,7 +17,7 @@ module.exports = app =>{
 
     app.post('/api/surveys/webhooks', (req, res) => {
         const p = new Path('/api/surveys/:surveyId/:choice');
-        const events = _.chain(req.body)
+       _.chain(req.body)
         .map( (event) => {
             const match = p.test(new URL(event.url).pathname);
             if (match) {
@@ -28,8 +28,29 @@ module.exports = app =>{
         })
         .compact()
         .uniqWith(_.isEqual)
+        .each((event) => {
+            console.log('choice', event.choice);
+          
+            Survey.updateOne(
+                {
+                  _id: event.surveyId,
+                  recipients: {
+                    $elemMatch: { email: event.email, clicked: false }
+                  }
+                },
+                {
+                  $inc: { [event.choice]: 1 },
+                  $set: { 'recipients.$.clicked': true },
+                  lastResponded: new Date()
+                }
+      ).exec();
+                
+           
+            
+        })
         .value();
-        console.log(events);
+
+
         res.send({});
     });
 
