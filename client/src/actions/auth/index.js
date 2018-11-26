@@ -1,4 +1,4 @@
-import { FETCH_USER, LOG_OUT } from './actionTypes';
+import { FETCH_USER, LOG_OUT } from '../actionTypes';
 
 
 export const fetchUserAction = (data) => {

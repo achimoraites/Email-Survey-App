@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {fetchUserAction} from '../auth/index';
-import { FETCH_SURVEYS } from '../auth/actionTypes';
+import { FETCH_SURVEYS } from '../actionTypes';
 
 
 export const sendSurvey = (survey, history) => async dispatch => {
