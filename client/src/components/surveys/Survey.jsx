@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Survey = ({ survey }) => {
-    console.log('survey',survey);
+    // console.log('survey',survey);
     return <div style={{marginTop: '1em'}}>
         <div className="card blue-grey darken-3">
             <div className="card-content white-text">
