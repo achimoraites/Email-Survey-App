@@ -14,7 +14,7 @@ class SurveyList extends Component {
         if (this.props.surveys.length === 0) {
             return <h5 className="red-text center">You have no surveys yet!</h5>
         }
-        return this.props.surveys.map(survey => {
+        return this.props.surveys.reverse().map(survey => {
             return (
                 <Survey survey={survey} />
             )
