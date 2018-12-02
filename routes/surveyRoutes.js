@@ -11,13 +11,14 @@ const Survey = mongoose.model('surveys');
 
 module.exports = app =>{
 
-    app.get('/api/surveys', requireLogin, async (req, res)=> {
+   
+
+    app.delete('/api/surveys/:surveyId', requireLogin , async (req, res)=> {
         const user = req.user;
-        const surveys = await Survey.find({
-            _user: user
-        })
-        .select({recipients: false});
-        res.send(surveys);
+        const deleteSurvey = await Survey.findOneAndDelete({
+            _id : surveyId
+        }).exec();
+        res.send(deleteSurvey);
     });
 
     app.get('/api/surveys/:surveyId/:choice', (req, res) =>{
@@ -52,18 +53,22 @@ module.exports = app =>{
                   $set: { 'recipients.$.clicked': true },
                   lastResponded: new Date()
                 }
-      ).exec();
-                
-           
-            
+      ).exec();         
         })
         .value();
-
-
         res.send({});
     });
 
-    app.post('/api/surveys',requireLogin, requireCredits, async (req, res) => {
+    app.route('/api/surveys')
+    .get(requireLogin, async (req, res)=> {
+        const user = req.user;
+        const surveys = await Survey.find({
+            _user: user
+        })
+        .select({recipients: false});
+        res.send(surveys);
+    })
+    .post(requireLogin, requireCredits, async (req, res) => {
         const { title, subject, body, recipients } = req.body;
       
         const survey = new Survey({
@@ -87,9 +92,5 @@ module.exports = app =>{
         } catch (err) {
             res.status(422).send(err);
         }
-
-   
-
     });
-
 }
