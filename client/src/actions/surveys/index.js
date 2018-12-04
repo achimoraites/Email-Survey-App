@@ -14,7 +14,16 @@ export const fetchSurveys = () => async dispatch => {
     dispatch({type: FETCH_SURVEYS, payload: res.data});
 }
 
+// TODO: this needs to work somehow!
 export const deleteSurvey = surveyId => async dispatch => {
-    const res = await axios.delete(`/api/surveys/${surveyId}`);
-    dispatch({type: FETCH_SURVEYS, payload: res.data});
+    console.log('delete',surveyId);
+    console.log(`/api/surveys/${surveyId}`);
+    try {
+        await axios.delete(`/api/surveys/${surveyId}`);
+        // const res = await axios.get('/api/surveys');
+        // dispatch({type: FETCH_SURVEYS, payload: res.data});
+    } catch (error) {
+        console.error(error);
+    }
+ 
 }
