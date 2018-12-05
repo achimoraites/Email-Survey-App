@@ -18,7 +18,7 @@ Emaily allows a user to create an account using his/her Google credentials. The 
 ## Logged in
 ### Creating a new Survey
 1. Insert data
-<img src='newSurvey.png' alt='survey 1' />
+<img src='newSurvey1.png' alt='survey 1' />
 2. Review before sending survey
 <img src='newSurvey2.png' alt='emaily logged in' />
 
