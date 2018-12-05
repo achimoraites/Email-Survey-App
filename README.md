@@ -8,8 +8,16 @@ MERN stack application , some features:
 - Payments with Stripe
 - Sends emails with sendgrid API
 
-### Logged in
+## Logged in
+### Creating a new Survey
+1. Insert data
+<img src='newSurvey.png' alt='survey 1' />
+2. Review before sending survey
+<img src='newSurvey2.png' alt='emaily logged in' />
+
+### View your surveys
 <img src='loggedIn.png' alt='emaily logged in' />
 
-### Not logged in
+
+## Landing page
 <img src='preview.png' alt='emaily screenshot' />
