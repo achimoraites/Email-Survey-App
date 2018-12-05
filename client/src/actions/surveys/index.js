@@ -21,7 +21,6 @@ export const fetchSurveys = () => async dispatch => {
     });
 }
 
-// TODO: this is able to delete but dispatch is not running!
 export const deleteSurvey = (survey) => async dispatch => {
     const surveys = await axios.delete('/api/surveys/', { data: survey });
     dispatch({ type: FETCH_SURVEYS, payload: surveys.data });
