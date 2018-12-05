@@ -11,8 +11,24 @@ const surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 const Survey = mongoose.model('surveys');
 
-module.exports = app => {
+// helpers
 
+function deleteSurvey(_id) {
+    return Survey.findOneAndDelete({
+        _id
+    }).exec();
+};
+
+function fetchAllSurveys(user) {
+    return Survey.find({
+        _user: user
+    })
+    .select({
+        recipients: false
+    });
+};
+
+module.exports = app => {
     app.get('/api/surveys/:surveyId/:choice', (req, res) => {
         res.send(`Thank you for voting!!!`);
     });
@@ -64,17 +80,11 @@ module.exports = app => {
         res.send({});
     });
 
-   
 
     app.route('/api/surveys')
         .get(requireLogin, async (req, res) => {
             const user = req.user;
-            const surveys = await Survey.find({
-                    _user: user
-                })
-                .select({
-                    recipients: false
-                });
+            const surveys = await fetchAllSurveys(user);
             res.send(surveys);
         })
         .post(requireLogin, requireCredits, async (req, res) => {
@@ -108,21 +118,22 @@ module.exports = app => {
             } catch (err) {
                 res.status(422).send(err);
             }
-        });
+        })
+        .delete(requireLogin, async (req, res) => {
+            // console.log(req.body);
+            const { _id } = req.body;
+            const user = req.user;
+            try {
+                // delete survey
+                await deleteSurvey(_id);
+                // fetch all surveys
+                const surveys = await fetchAllSurveys(user);
+                console.log('surveys',surveys);
+                res.send(surveys);
+            } catch (err) {
+                res.status(400).send(err);
+            }
 
-        
-    app.delete('/api/surveys/:surveyId', requireLogin, async (req, res) => {
-        console.log(req.params.surveyId);
-        const surveyId = req.params.surveyId;
-        try {
-            const deleteSurvey = await Survey.findOneAndDelete({
-                _id: surveyId
-            }).exec();
-            res.send(deleteSurvey);
-        } catch (err) {
-            res.status(400).send(err);
-        }
-       
-    });
+        });
 
 }
