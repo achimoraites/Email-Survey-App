@@ -5,11 +5,11 @@ import { deleteSurvey } from '../../actions/surveys';
 
 // TODO: add the delete action !
 
-const Survey = ({ survey }) => {
+const Survey = ({ survey, deleteSurvey }) => {
     // console.log('survey',survey);
     return <div style={{marginTop: '1em'}}>
         <div className="card blue-grey darken-3">
-        <span onClick={deleteSurvey(survey)} style={{color: '#fff', margin: '0.5em'}} className="right" title={`Delete ${survey.title} ?`}><i className="material-icons">clear</i></span>
+        <span onClick={()=>deleteSurvey(survey)} style={{color: '#fff', margin: '0.5em'}} className="right" title={`Delete ${survey.title} ?`}><i className="material-icons">clear</i></span>
             <div style={{marginTop: '1em'}} className="card-content white-text">
                 <span className="card-title">{survey.title}</span>
                 <p>{survey.body}</p>
@@ -23,6 +23,8 @@ const Survey = ({ survey }) => {
     </div>
 }
 
+function mapStateToProps(state) {
+    return { state };
+}
 
-
-export default connect(null,{deleteSurvey})(Survey);
+export default connect(mapStateToProps,{deleteSurvey})(Survey);

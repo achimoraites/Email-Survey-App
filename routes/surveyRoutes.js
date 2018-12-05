@@ -123,17 +123,12 @@ module.exports = app => {
             // console.log(req.body);
             const { _id } = req.body;
             const user = req.user;
-            try {
                 // delete survey
                 await deleteSurvey(_id);
                 // fetch all surveys
                 const surveys = await fetchAllSurveys(user);
                 console.log('surveys',surveys);
                 res.send(surveys);
-            } catch (err) {
-                res.status(400).send(err);
-            }
-
         });
 
 }
