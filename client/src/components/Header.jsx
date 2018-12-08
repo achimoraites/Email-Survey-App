@@ -17,11 +17,11 @@ class Header extends Component{
         case null:
           return;
         case false:
-          return <li><a href="/auth/google">Login with Google</a></li>;
+          return <li><a href="/auth/google"><i className="material-icons" >person</i></a></li>;
         default:
           return [
             <li key={1}><Payments /></li>,
-            <li key={2}>Credits :  {this.props.auth.credits}</li>,  
+            <li key={2}><i className="material-icons left" >monetization_on</i>  {this.props.auth.credits}</li>,  
             <li key={3} onClick={()=>this.logout()}><Link to={'/'} style={{color: '#fff'}} >Log out {this.props.auth.firstName}?</Link></li>
         ];
       }
