@@ -1,4 +1,4 @@
-# Emaily
+# Email Survey App
 MERN stack application , some features:
 
 - Authentication with Google OAuth
